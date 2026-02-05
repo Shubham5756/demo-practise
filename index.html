@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banquet Hall - Client Inquiry Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <h1>Banquet Hall Inquiry Form</h1>
+                <p>Tell us about your event and let us help make it memorable</p>
+            </div>
+
+            <form id="banquetForm" class="banquet-form">
+                <!-- Client Information Section -->
+                <fieldset class="form-section">
+                    <legend>Your Information</legend>
+                    
+                    <div class="form-group">
+                        <label for="clientName">Full Name *</label>
+                        <input type="text" id="clientName" name="clientName" placeholder="Enter your full name" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientEmail">Email Address *</label>
+                        <input type="email" id="clientEmail" name="clientEmail" placeholder="Enter your email" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clientPhone">Phone Number *</label>
+                        <input type="tel" id="clientPhone" name="clientPhone" placeholder="Enter your phone number" required>
+                        <span class="error-message"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Event Details Section -->
+                <fieldset class="form-section">
+                    <legend>Event Details</legend>
+                    
+                    <div class="form-group">
+                        <label for="eventType">Event Type *</label>
+                        <select id="eventType" name="eventType" required>
+                            <option value="">-- Select Event Type --</option>
+                            <option value="Wedding">Wedding</option>
+                            <option value="Birthday Party">Birthday Party</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Anniversary">Anniversary</option>
+                            <option value="Engagement">Engagement</option>
+                            <option value="Conference">Conference</option>
+                            <option value="Social Gathering">Social Gathering</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="eventDate">Event Date *</label>
+                        <input type="date" id="eventDate" name="eventDate" required>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guestCount">Number of Guests *</label>
+                        <input type="number" id="guestCount" name="guestCount" placeholder="Enter expected number of guests" min="1" required>
+                        <span class="error-message"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Venue Type Section -->
+                <fieldset class="form-section">
+                    <legend>Venue Type *</legend>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" id="venueIndoor" name="venueType" value="Indoor" required>
+                            <label for="venueIndoor">Indoor</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="venueOutdoor" name="venueType" value="Outdoor" required>
+                            <label for="venueOutdoor">Outdoor</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" id="venueSemiOutdoor" name="venueType" value="Semi-outdoor" required>
+                            <label for="venueSemiOutdoor">Semi-outdoor</label>
+                        </div>
+                    </div>
+                    <span class="error-message"></span>
+                </fieldset>
+
+                <!-- Services Section -->
+                <fieldset class="form-section">
+                    <legend>Services Required *</legend>
+                    <p class="section-description">Select all services you need:</p>
+                    <div class="checkbox-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="catering" name="services" value="Catering">
+                            <label for="catering">Catering (Food & Beverages)</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="decoration" name="services" value="Decoration">
+                            <label for="decoration">Decoration</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="musicDJ" name="services" value="Music/DJ">
+                            <label for="musicDJ">Music/DJ</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="photography" name="services" value="Photography/Videography">
+                            <label for="photography">Photography/Videography</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="lighting" name="services" value="Lighting">
+                            <label for="lighting">Lighting</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="barService" name="services" value="Bar Service">
+                            <label for="barService">Bar Service</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="valetParking" name="services" value="Valet Parking">
+                            <label for="valetParking">Valet Parking</label>
+                        </div>
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="soundSystem" name="services" value="Sound System">
+                            <label for="soundSystem">Sound System</label>
+                        </div>
+                    </div>
+                    <span class="error-message"></span>
+                </fieldset>
+
+                <!-- Budget Section -->
+                <fieldset class="form-section">
+                    <legend>Budget Range *</legend>
+                    <div class="form-group">
+                        <select id="budget" name="budget" required>
+                            <option value="">-- Select Budget Range --</option>
+                            <option value="₹50,000 - ₹1,00,000">₹50,000 - ₹1,00,000</option>
+                            <option value="₹1,00,000 - ₹2,00,000">₹1,00,000 - ₹2,00,000</option>
+                            <option value="₹2,00,000 - ₹5,00,000">₹2,00,000 - ₹5,00,000</option>
+                            <option value="₹5,00,000 - ₹10,00,000">₹5,00,000 - ₹10,00,000</option>
+                            <option value="Above ₹10,00,000">Above ₹10,00,000</option>
+                        </select>
+                        <span class="error-message"></span>
+                    </div>
+                </fieldset>
+
+                <!-- Special Requests Section -->
+                <fieldset class="form-section">
+                    <legend>Special Requests or Additional Information</legend>
+                    <div class="form-group">
+                        <label for="specialRequests">Tell us more about your event:</label>
+                        <textarea id="specialRequests" name="specialRequests" placeholder="Any special requests, dietary restrictions, or additional details..." rows="5"></textarea>
+                    </div>
+                </fieldset>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                    <button type="reset" class="reset-btn">Clear Form</button>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-content">
+                    <div class="success-icon">✓</div>
+                    <h2>Inquiry Submitted Successfully!</h2>
+                    <p>Thank you for your inquiry. Our team will contact you soon with more details about our services and availability.</p>
+                    <button class="close-success-btn" onclick="closeSuccessMessage()">Close</button>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                <div class="spinner"></div>
+                <p>Sending your inquiry...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-banner" style="display: none;">
+                <span id="errorText"></span>
+                <button class="close-error-btn" onclick="closeErrorMessage()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
